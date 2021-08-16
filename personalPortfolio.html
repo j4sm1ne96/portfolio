@@ -1,0 +1,69 @@
+<! DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="./portfolioStyle.css">
+    </head>
+    <body>
+        <h1 id='logo'>Jasmine Taylor</h1>
+        <nav>
+            <ul class='navigation items'>
+                <li class='navigation-item'><a href='#about-me'>About Me</a></li>
+                <li class='navigation-item'><a href='#projects'>Projects</a></li>
+                <li class='navigation-item'><a href='#skills'>Skills</a></li>
+                <li class='navigation-item'><a href='/contact.html'>Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="about-me">
+                <div class='about-me-container'>
+                <div class='about-me-text-container'></div>
+                    <h2>About Me</h2>
+                    <p>
+                    Hi! My name is Jasmine, and I am currently following a course on becoming a fullstack developer! 
+                    Outside of this I am a teacher.
+                    </p>
+                    <p>
+                    In my free time I like to run, read and catch-up with friends and family.
+                    </p>
+                    <p>
+                    Fun fact! I've been programming for: 
+                    <span id='time-container'>0</span> seconds!
+                    </p>
+                </div>
+                <img src='images/portfolio.jpeg' alt='My Picture' class='portrait'>
+                </div>
+            </section>
+            <section id='projects'>
+                <h2>Projects</h2>
+                    <h3>Excursion</h3>
+                    <img src='images/project1.png' alt='project screenshot' class="project-image">
+            </section>
+            <section id='skills'>
+                <h2>Skills</h2>
+                <div id='skills-container'>
+                    <img src='images/html5.png' alt='html5 logo' class='skill'>
+                    <img src='images/css3.png' alt='css3 logo' class='skill'>
+                    <img src='images/github.png' alt='GitHub logo' class='skill'>
+                    <img src='images/js.png' alt='JavaScript logo' class='skill'>
+                </div>
+            </section>
+        </main>
+        <footer>Made with <span class="heart">♥</span> in London</footer>
+    </body>
+    <script>
+        const timeContainer = document.getElementById("time-container");
+        const BIRTH_DAY = "04-05-1996";
+        const BIRTH_DAY_DATE = new Date(BIRTH_DAY);
+        const intlNumberFormatter = new Intl.NumberFormat("en-US");
+
+        setInterval(() => {
+            const now = new Date();
+            const difference = Math.floor(
+                (now.getTime() - BIRTH_DAY_DATE.getTime())/1000
+            );
+            timeContainer.innerText = intlNumberFormatter.format(difference);
+        }, 1000);
+    </script>
+</html>
